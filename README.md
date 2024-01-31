@@ -1,8 +1,9 @@
-# OK Real Estate
+# Stillwater City OK Real Estate
 Team Members:
+* Chinmayi Rane
 * Shujia Huang
 * Faisal Jaffri 
-* Chinmayi Rane
+
 
 *Professor In-Charge* - Dr. Bryan Hammer
 
