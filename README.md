@@ -69,13 +69,6 @@ The overall duration of the project is 14 weeks. The submission is divided into 
 
 Microsoft Teams was used to facilitate text-based project discussions. Before the project's first deliverable, we spoke with Dr. Hammer about our project-related thoughts and benefited from his insightful comments. GitHub served as our primary platform for storing code and data.
 
-The following GANTT chart shows the anticipated schedule for our project:
-
-![](assets/project_schedule.png)
-
-
-
-
 
 ## Data Preparation
 
