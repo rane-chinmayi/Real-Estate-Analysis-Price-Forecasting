@@ -1,30 +1,11 @@
-# Stillwater City OK Real Estate
-Team Members:
-* Chinmayi Rane
-* Shujia Huang
-* Faisal Jaffri 
+# Real Estate Analysis & Price Forecasting
+
+Tools & Skills-
+
+- Python: Web Scraping, data cleaning
+- R: Visualizations, Statistical Analysis (Hypothesis Testing, Regression and predictive models)
 
 
-*Professor In-Charge* - Dr. Bryan Hammer
-
-## Executive Summary
-
-Real estate is regarded as a physical asset and amazing resource of investment in the modern world. The housing market has always been an important topic for different parties such as the general population, governments at all levels, material suppliers, financial institutions, etc.  Moreover, real estate's excellent return on investment and financial security are two of its main draws for investors. Having said that, investing in an estate is significant and expensive. Given this enormous sum of money, it is imperative to conduct a thorough study before investing in any real estate.
-
-The benefits of real estate analysis are as follows:
-* It assists in avoiding bad financial choices.
-* It helps investors get an accurate estimate for the appropriate rental property listing.
-* Select comparables to find the greatest offers at the lowest rates.
-* Study the lowest pricing based on past sales data.
-* Determining appropriate value of properties to aid negotiations.
-
-In our study, we'll examine how different aspects of a house's features and the price at which it's sold relate to one another. The objective is to investigate how factors such as area, location, and the number of bedrooms and bathrooms affect price ranges.
-
-
-
-
-
-## Statement of Scope
 ### Project Objectives:
  
 The scope of this project is limited to scraping data from ‘Zillow’ for the Stillwater city only. The main objectives for our project are listed below:
@@ -38,38 +19,6 @@ The scope of this project is limited to scraping data from ‘Zillow’ for the 
 * *Co-relation Analysis* -  This involves in determining which parameters for the dataset are co-related to the price of the house and also analyzing its percentage of correlation
 
 
-### Variables:
-We have pulled data for sold properties in Stillwater city. The image below shows the page which we used to scrape our data from. 
-![](assets/zillow.png)
-
-
-Our dataset (Stillwater City) for Deliverable 1 contains two files :
-* *1.  House.csv ->* This file contains all the important features of the house which we have used for our main analysis. These attributes includes house id, zip code, number of bedrooms, number of bathrooms, area, latitude, longitude, address and the house price.
- 
-* *2.  House_details.csv ->* This file contains additional details about each house present in the House.csv file. These details include lot area and home type (single family, duplex, Condo etc). These details provide further depth in our analysis. 
- 
-The target variable here is the price of the house. Our analysis will result in finding attributes that effect the price of the house. For this, we will be finding correlation between variables in our dataset and what variables are positively correlated with the price. We will also predict the house prices by creating a linear regression model that identifies the price of the house with respect to the area. Apart from this, we will also be doing analysis on our target variable with respect to features like bedroom, bathroom, pincode etc. 
-
-For Deliverable 2, we have scraped data for Oklahoma City from realtor.com. On scraping the data we have two files:
-
-* *listings.csv* --> This is the scraped data from realtor.com. This table contains information of price, number of bedrooms, number of bathrooms, house size and address.
-
-*  *realtor.csv* --> This is the cleaned data. It contains price, bedrooms, bathrooms, house size and Zipcode. The attribute Zipcode was derived from address using Regex.
-
-## Unit of Analysis
-Our unit of analysis is the house of which we are predicting and analyzing prices. Throughout the project, we see that there are multiple factors that influence our unit (house). These include number of bedrooms, number of bathrooms, house size, zipcode etc. 
-
-
-## Project Schedule
-The overall duration of the project is 14 weeks. The submission is divided into three deliverables:
-
-* Project Proposal: 20 days
-* Deliverable 1:  7 weeks
-* Deliverable 2: 5 weeks
-
-Microsoft Teams was used to facilitate text-based project discussions. Before the project's first deliverable, we spoke with Dr. Hammer about our project-related thoughts and benefited from his insightful comments. GitHub served as our primary platform for storing code and data.
-
-
 ## Data Preparation
 
 For Zillow data:
@@ -77,13 +26,6 @@ For Zillow data:
 * The original scrapped data can be found in [scraped_zillow.csv](data/scraped_zillow.csv)
 * The code of scrapping data can be found in [zillow_scrape.py](code/zillow_scrape.py)
 * The code of cleaned data can be found in [zillow_clean.py](code/zillow_clean.py)
-
-For Realtor data:
-* The final scrapped data for our project is [listings.csv](data/listings.csv)
-* The cleaned data for our project is [realtor.csv](data/realtor.csv)
-* The code of scrapping data can be found in [realtor_scrape.py](code/realtor_scrape.py)
-* The code of cleaned data can be found in [realtor_clean.py](code/realtor_clean.py)
-
 
 
 ### Data Access
@@ -363,40 +305,4 @@ With model 2, We take the same size of the house as 1295 sqft and include 3 bedr
 
 
 ![](assets/model1.png)
-
-
-
-
-
-## Conclusion and Discussion
-##### Summary of the findings
-
-* For the project deliverable 1, we have successfully scraped data from Zillow. Apart from being a dynamic website, Zillow had a strong firewall which was immuned to web scrapping data from it. So initially, we weren’t able to use geckodriver to scrape the data. Instead, we used the Python request module and scrapped the data with the help of json loads framework.
- 
-* At first, we had scraped data into two csv files namely House.csv and House_details.csv. 
- 
-* The House_details.csv file contains detailed information about every house instance collected in House.csv file. This process involved navigating to each house’s individual page and scrapping data from there. We used Zillow API for this process.
- 
-* We then merged and consolidated these two files based on the attribute house id. Our final dataset is a combination of major attributes from House.csv and detailed attributes about each specific house from the House_details.csv files.
-
-* For Deliverable 2, we scrapped data from Realtor website and performed the entire data preparation just like Zillow. All our analyses and model development is based on realtor data.
-
-* Bedroom and Bathroom Analysis:  According to our analysis we saw that houses with 3 bedrooms and houses with 2 bathrooms are the most commonly sold houses. So any real estate developer can use this analysis and build houses with these features to get maximum profit.
-
-* Our Price prediction models can help many companies, and individuals estimate the price of the house by area, the number of bedrooms, and the number of bathrooms. Companies can forecast and predict the price of the houses in that area to attract potential customers who are interested in buying a house in the future.
-
-
-
-
-
-
-##### What are the implications of your research upon the people, businesses, or community related to the project?
-
-Our research would aid its users in the following ways:
-* Analyzing the prices of houses based on area, number of bedrooms, number of bathrooms, zipcode etc
-* Determining correlation between different variables of house including area, bedrooms, bathrooms, zipcode etc.
-* Predicting the price of the house based on its area for a specific location (in this case: Oklahoma City)
-* This analysis can help real-estate developers build houses with these features to get maximum profit.
-* Property Evaluations
-
 
