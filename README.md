@@ -29,7 +29,7 @@ For Zillow data:
 
 
 ### Data Access
-There is an ample amount of data present on the internet over real estate. So finding data was not a hard task, but selecting one particular source from all different sources of data took an extra effort. As the scope of the project is limited to one specific area of the state, we tried to find a source that could give us the maximum amount of data. After carefully analyzing different websites and based on the amount of data each website contains, we finalized Zillow as our source.
+There is an ample amount of data present on the internet over real estate. So finding data was not a hard task, but selecting one particular source from all different sources of data took an extra effort. As the scope of the project is limited to one specific area of the state, I tried to find a source that could give us the maximum amount of data. After carefully analyzing different websites and based on the amount of data each website contains, I finalized Zillow as our source.
 
 Zillow is an American technology-based real-estate company that gives customers a flawless experience buying, selling, renting, and financing property all over the United States.
 
@@ -45,15 +45,15 @@ Working with Zillow gave us a breakdown of house types as they have different fi
 
 Our initial analysis started by scraping data for sold Stillwater houses. There are two ways of to scrape data from Zillow. One is to use Zillow API which fetches data on the basis of house ID and
 
-the other is to scrape the data. The API can only be used if you have a house ID, so we implemented our scripts in such a way that it does two jobs.
+the other is to scrape the data. The API can only be used if you have a house ID, so I implemented our scripts in such a way that it does two jobs.
 
-* Write a script to fetch the list of houses for a particular search query, for example. We searched for Stillwater, so it gives a list of all houses for the Stillwater location.
+* Write a script to fetch the list of houses for a particular search query, for example. I searched for Stillwater, so it gives a list of all houses for the Stillwater location.
 
 * Once we have the list of houses, write a script that fetches the house id from that list and passes it to the API for additional details.
 
 __Scraping Zillow:__ The best way to pull data was from the search page that gives us the list of at least 40 houses along with a pagination view that goes to 20 pages.
 
-As Zillow does not allow a web driver to scrape its pages it barred us from scraping the page using traditional CSS and Xpath selectors. To resolve this issue, we used the Python request module and JSON loads to pull the data from the page. With this approach, we were able to fetch data in JSON format and convert it to a CSV file. We got a bunch of unnecessary parameters which was not required but our script worked, and we got our first set of data.
+As Zillow does not allow a web driver to scrape its pages it barred us from scraping the page using traditional CSS and Xpath selectors. To resolve this issue, I used the Python request module and JSON loads to pull the data from the page. With this approach, I was able to fetch data in JSON format and convert it to a CSV file. I got a bunch of unnecessary parameters which was not required but our script worked, and got our first set of data.
 
 Our first set of data had more than 15 attributes, and the majority of them were not part of our analysis. Few of the important fields for our analysis includes:
 
@@ -75,9 +75,9 @@ Our first set of data had more than 15 attributes, and the majority of them were
 
 * Longitude
 
-The problem arose when we tried to scrape data for the next page, as we were not using the web driver to scrape our data we were unable to click on the pagination link and move to the next part of the search result.
+The problem arose when I tried to scrape data for the next page, as I was not using the web driver to scrape our data we were unable to click on the pagination link and move to the next part of the search result.
 
-To solve this approach, we created a loop that ran till the end of the 20 pages and manipulated our search URL in such a way that for every iteration it generates a new updated URL, and send it to our scrape function to pull the data and convert it into a data frame.
+To solve this approach, I created a loop that ran till the end of the 20 pages and manipulated our search URL in such a way that for every iteration it generates a new updated URL, and send it to our scrape function to pull the data and convert it into a data frame.
 
 By this method, our script created 20 different data frames and finally merged all those into a single data frame and converted it into a CSV file. Through this approach, we got our initial set of data analysis.
 
@@ -89,7 +89,7 @@ __Using API:__ Once we have our final CSV that contains the required attributes 
 
 ### Data Cleaning
 The art of extracting meaningful, uncorrupted, or badly formatted data from source data is known as Data Cleaning. It’s one of the most crucial factors of any analysis, if data is not correct, the analysis or the models will return unreliable results. But how do we know that our
-data is uncorrupted? There are a few steps that we took to clean data and make it appear more reliable. All the data cleaning is done using Python and with the help of pandas.
+data is uncorrupted? There are a few steps that I took to clean data and make it appear more reliable. All the data cleaning is done using Python and with the help of pandas.
 
 * Remove unwanted observations from values: Price is the main factor on which most of our analysis depends. But in our scraped data, the price column comes with a value $ 320,000. Multiple things are wrong with this format, firstly the price is saved as a string value in the scraped file, we need the price as a numeric value so that we can do calculations on it. Secondly, it contains the ‘$’ and ‘,’ signs which we don’t need in our numbers. To deal with it, our script iterated over each value and removed the ‘$’ and ’,’ sign. Finally converted it to a numeric value.
 
